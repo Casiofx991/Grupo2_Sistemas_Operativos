@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canciones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Lista de canciones</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Compositor</th>
+                <th>Intérprete</th>
+                <th>Periodo</th>
+                <th>Duración</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for song in songs %}
+            <tr>
+                <td>{{ song[1] }}</td>
+                <td>{{ song[2] }}</td>
+                <td>{{ song[3] }}</td>
+                <td>{{ song[4] }}</td>
+                <td>{{ song[5] }}</td>
+                <td>
+                    <button class="modify cta-button neon">Modificar</button>
+                    <form action="{{ url_for('delete_song', song_id=song[0]) }}" method="get">
+                    <button class="delete cta-button neon">Eliminar</button>
+                    </form>
+                    <div class="modify-form" style="display: none;">
+                        <form action="{{ url_for('modify_song', song_id=song[0]) }}" method="post">
+                            <label>Título: <input type="text" name="titulo" value="{{ song[1] }}"></label><br>
+                            <label>Compositor: <input type="text" name="compositor" value="{{ song[2] }}"></label><br>
+                            <label>Intérprete: <input type="text" name="interprete" value="{{ song[3] }}"></label><br>
+                            <label>Periodo: <input type="text" name="periodo" value="{{ song[4] }}"></label><br>
+                            <label>Duración: <input type="text" name="duracion" value="{{ song[5] }}" placeholder="hh:mm:ss"></label><br>
+                            <button type="submit" class="cta-button neon">Guardar cambios</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="add-song-container">
+        <h2>Agregar canción</h2>
+        <form action="{{ url_for('add_song') }}" method="post">
+            <label>Título: <input type="text" name="titulo"></label><br>
+            <label>Compositor: <input type="text" name="compositor"></label><br>
+            <label>Intérprete: <input type="text" name="interprete"></label><br>
+            <label>Periodo: <input type="text" name="periodo"></label><br>
+            <label>Duración: <input type="text" name="duracion" placeholder="hh:mm:ss"></label><br>
+            <button type="submit" class="cta-button neon">Agregar</button>
+        </form>
+     </div>
+     <script>
+        document.querySelectorAll('.modify').forEach((button, index) => {
+            button.addEventListener('click', () => {
+                const form = document.querySelectorAll('.modify-form')[index];
+                form.style.display = form.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

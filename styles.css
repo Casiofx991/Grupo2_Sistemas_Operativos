@@ -1,0 +1,134 @@
+@import url('https://fonts.cdnfonts.com/css/lemonmilk');
+body {
+    font-family: Arial, sans-serif;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image: linear-gradient(to bottom right, #4c2d90, #000000);
+    min-height: 100vh;
+    color: white;
+}
+
+h1, h2 {
+    font-family: 'Lemon/Milk', sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #1a1a1a;
+}
+
+tr {
+    background-color: #6d6c6c;
+}
+
+tr:nth-child(even) {
+    background-color: #5d5c5c;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modify {
+    background-color: #f9a825;
+}
+
+.delete {
+    background-color: #f44336;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-song-container {
+    background-color: rgba(54, 57, 63, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  form input[type="text"] {
+    background-color: #1e1e1e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  form input[type="text"]:focus {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #8e3aff, 0 0 30px #8e3aff, 0 0 40px #8e3aff, 0 0 55px #8e3aff, 0 0 75px #8e3aff;
+  }
+  
+  form input[type="text"]::placeholder {
+    color: #aaa;
+  }
+
+.cta-button {
+    display: inline-block;
+    text-decoration: none;
+    background-image: linear-gradient(to right, #f04e23, #8e3aff);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .cta-button:hover {
+    background-image: linear-gradient(to right, #c9411e, #6c2cc4);
+  }
+  
+  .neon {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff2e00, 0 0 30px #ff2e00, 0 0 40px #ff2e00, 0 0 55px #ff2e00, 0 0 75px #ff2e00;
+  }
+  
+  .neon:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #8e3aff, 0 0 30px #8e3aff, 0 0 40px #8e3aff, 0 0 55px #8e3aff, 0 0 75px #8e3aff;
+    animation: neonGlow 2s infinite alternate;
+  }
+  
+  @keyframes neonGlow {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff2e00, 0 0 30px #ff2e00, 0 0 40px #ff2e00, 0 0 55px #ff2e00, 0 0 75px #ff2e00;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #8e3aff, 0 0 30px #8e3aff, 0 0 40px #8e3aff, 0 0 55px #8e3aff, 0 0 75px #8e3aff;
+    }
+  }
